@@ -1,5 +1,6 @@
 package com.netocampana.mileniocapitaldesafio.services;
 
+import com.netocampana.mileniocapitaldesafio.entities.Data;
 import com.netocampana.mileniocapitaldesafio.entities.Graph;
 import com.netocampana.mileniocapitaldesafio.exceptions.ObjectNotFoundException;
 import com.netocampana.mileniocapitaldesafio.repositories.GraphRepository;
@@ -48,5 +49,62 @@ public class GraphService {
     public void deleteAll(){
         graphRepository.deleteAll();
     }
+
+
+    public List<String> findRoutesWithMaxStops(String id, String source, String target, int maxStops){
+
+        Graph graphUsed = findById(id);
+        List<Data> routes = graphUsed.getData();
+        List<Data> newRoutes;
+
+        String newSource = "";
+        List<String> routesThatCanBeUsed = new ArrayList<>();
+        int numberStops = 0;
+
+        for(Data data : routes){
+
+            if (data.getSource().equals(source)){
+                if (data.getTarget().equals(target)) {
+                    routesThatCanBeUsed.add(data.getSource()+data.getTarget()+data.getDistance());
+                    numberStops++;
+                }else{
+                    for(Data data2 : routes){
+
+                        if(data2.getSource().equals(data.getTarget())){
+                            if(data2.getTarget().equals(target)){
+                                routesThatCanBeUsed.add(data.getSource()+data2.getSource()+data2.getTarget()+(data2.getDistance()+data.getDistance()));
+                            }
+
+                        }else{
+                            for(Data data3 : routes){
+                                if(data2.getTarget().equals(data3.getSource())){
+                                    if(data3.getTarget().equals(target)){
+                                        routesThatCanBeUsed.add(data.getSource()+data2.getSource()+data3.getSource()+data3.getTarget()+(data.getDistance()+data2.getDistance()+data3.getDistance()));
+                                    }
+                                }
+                            }
+
+
+                        }
+
+                    }
+                }
+
+
+            }
+
+        }
+
+        return routesThatCanBeUsed;
+
+
+
+
+
+    }
+
+
+
+
 
 }

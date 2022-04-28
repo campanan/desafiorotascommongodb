@@ -60,5 +60,15 @@ public class GraphController {
         return ResponseEntity.noContent().build();
     }
 
+    @GetMapping(value="/{id}/from/{source}/to/{target}")
+    public ResponseEntity<List<String>> routesThatCanBeUsed(@PathVariable String id, @PathVariable String source, @PathVariable String target){
+        int maxStops = 3;
+
+        List<String> routesNew = graphService.findRoutesWithMaxStops(id, source, target, maxStops);
+
+        return ResponseEntity.ok().body(routesNew);
+
+    }
+
 
 }
