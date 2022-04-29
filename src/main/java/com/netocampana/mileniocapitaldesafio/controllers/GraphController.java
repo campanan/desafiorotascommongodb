@@ -1,20 +1,17 @@
 package com.netocampana.mileniocapitaldesafio.controllers;
 
-import com.netocampana.mileniocapitaldesafio.entities.Data;
 import com.netocampana.mileniocapitaldesafio.entities.Graph;
+import com.netocampana.mileniocapitaldesafio.services.RoutesService;
 import com.netocampana.mileniocapitaldesafio.services.GraphService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import javax.validation.Valid;
 import java.net.URI;
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -61,10 +58,10 @@ public class GraphController {
     }
 
     @GetMapping(value="/{id}/from/{source}/to/{target}")
-    public ResponseEntity<List<String>> routesThatCanBeUsed(@PathVariable String id, @PathVariable String source, @PathVariable String target){
+    public ResponseEntity<List<RoutesService>> routesThatCanBeUsed(@PathVariable String id, @PathVariable String source, @PathVariable String target){
         int maxStops = 3;
 
-        List<String> routesNew = graphService.findRoutesWithMaxStops(id, source, target, maxStops);
+        List<RoutesService> routesNew = graphService.findRoutesWithMaxStops(id, source, target, maxStops);
 
         return ResponseEntity.ok().body(routesNew);
 

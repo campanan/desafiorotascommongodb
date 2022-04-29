@@ -8,8 +8,6 @@ import com.netocampana.mileniocapitaldesafio.util.Utils;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -51,60 +49,44 @@ public class GraphService {
     }
 
 
-    public List<String> findRoutesWithMaxStops(String id, String source, String target, int maxStops){
+    public List<RoutesService> findRoutesWithMaxStops(String id, String source, String target, int maxStops){
 
         Graph graphUsed = findById(id);
         List<Data> routes = graphUsed.getData();
         List<Data> newRoutes;
 
         String newSource = "";
-        List<String> routesThatCanBeUsed = new ArrayList<>();
+        List<RoutesService> routesThatCanBeUsed = new ArrayList<>();
         int numberStops = 0;
 
         for(Data data : routes){
-
             if (data.getSource().equals(source)){
                 if (data.getTarget().equals(target)) {
-                    routesThatCanBeUsed.add(data.getSource()+data.getTarget()+data.getDistance());
-                    numberStops++;
+                    RoutesService route1 = new RoutesService(data.getSource()+data.getTarget(), 1);
+                    routesThatCanBeUsed.add(route1);
+
                 }else{
                     for(Data data2 : routes){
+                        if(data2.getSource().equals(data.getTarget())&&(data2.getTarget().equals(target))) {
+                            RoutesService route2 = new RoutesService(data.getSource() + data2.getSource() + data2.getTarget(), 2);
+                            routesThatCanBeUsed.add(route2);
 
-                        if(data2.getSource().equals(data.getTarget())){
-                            if(data2.getTarget().equals(target)){
-                                routesThatCanBeUsed.add(data.getSource()+data2.getSource()+data2.getTarget()+(data2.getDistance()+data.getDistance()));
-                            }
-
-                        }else{
+                        }else if (data2.getSource().equals(data.getTarget())){
                             for(Data data3 : routes){
-                                if(data2.getTarget().equals(data3.getSource())){
-                                    if(data3.getTarget().equals(target)){
-                                        routesThatCanBeUsed.add(data.getSource()+data2.getSource()+data3.getSource()+data3.getTarget()+(data.getDistance()+data2.getDistance()+data3.getDistance()));
-                                    }
+                                if(data2.getTarget().equals(data3.getSource())&&data3.getTarget().equals(target)){
+                                    RoutesService route3 = new RoutesService(data.getSource() + data2.getSource() + data2.getTarget() + data3.getTarget(), 3);
+                                    routesThatCanBeUsed.add(route3);
                                 }
                             }
-
-
                         }
-
                     }
                 }
-
-
             }
-
         }
 
         return routesThatCanBeUsed;
 
-
-
-
-
     }
 
-
-
-
-
 }
+
