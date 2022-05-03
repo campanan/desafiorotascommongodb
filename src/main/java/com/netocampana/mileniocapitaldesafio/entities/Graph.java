@@ -20,6 +20,8 @@ public class Graph {
     @Id
     private String id;
 
+    @NonNull
+    @NotEmpty
     private List<Data> data = new ArrayList<>();
 
 

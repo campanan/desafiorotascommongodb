@@ -1,7 +1,8 @@
 package com.netocampana.mileniocapitaldesafio.controllers;
 
 import com.netocampana.mileniocapitaldesafio.entities.Graph;
-import com.netocampana.mileniocapitaldesafio.services.RoutesService;
+import com.netocampana.mileniocapitaldesafio.services.LowerDistanceDAO;
+import com.netocampana.mileniocapitaldesafio.services.RoutesDAO;
 import com.netocampana.mileniocapitaldesafio.services.GraphService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -58,14 +59,23 @@ public class GraphController {
     }
 
     @GetMapping(value="/{id}/from/{source}/to/{target}")
-    public ResponseEntity<List<RoutesService>> routesThatCanBeUsed(@PathVariable String id, @PathVariable String source, @PathVariable String target){
-        int maxStops = 3;
+    public ResponseEntity<List<RoutesDAO>> routesThatCanBeUsed(@PathVariable String id, @PathVariable String source, @PathVariable String target, @RequestParam(defaultValue  = "99") String maxStops){
 
-        List<RoutesService> routesNew = graphService.findRoutesWithMaxStops(id, source, target, maxStops);
+        int maxStopsInt = Integer.parseInt(maxStops);
+
+        List<RoutesDAO> routesNew = graphService.findRoutesWithMaxStops(id, source, target, maxStopsInt);
 
         return ResponseEntity.ok().body(routesNew);
 
     }
 
+    @GetMapping(value="/distance/{id}/from/{source}/to/{target}")
+    public ResponseEntity<LowerDistanceDAO> lowerDistanceForRoute(@PathVariable String id, @PathVariable String source, @PathVariable String target){
+        int maxStops = 3;
 
+       LowerDistanceDAO routesNew = graphService.lowerDistanceOfARoute(id, source,target);
+
+        return ResponseEntity.ok().body(routesNew);
+
+    }
 }
