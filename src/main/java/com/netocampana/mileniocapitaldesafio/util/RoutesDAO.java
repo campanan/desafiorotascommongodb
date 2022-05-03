@@ -1,4 +1,4 @@
-package com.netocampana.mileniocapitaldesafio.services;
+package com.netocampana.mileniocapitaldesafio.util;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

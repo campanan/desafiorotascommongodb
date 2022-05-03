@@ -4,9 +4,8 @@ import com.netocampana.mileniocapitaldesafio.entities.Graph;
 import com.netocampana.mileniocapitaldesafio.repositories.GraphCreator;
 import com.netocampana.mileniocapitaldesafio.repositories.GraphRepository;
 import com.netocampana.mileniocapitaldesafio.services.GraphService;
-import com.netocampana.mileniocapitaldesafio.services.LowerDistanceDAO;
-import com.netocampana.mileniocapitaldesafio.services.RoutesDAO;
-import io.restassured.module.mockmvc.RestAssuredMockMvc;
+import com.netocampana.mileniocapitaldesafio.util.LowerDistanceDAO;
+import com.netocampana.mileniocapitaldesafio.util.RoutesDAO;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -16,17 +15,11 @@ import org.mockito.ArgumentMatchers;
 import org.mockito.BDDMockito;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.data.domain.PageImpl;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
-import org.springframework.util.RouteMatcher;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(SpringExtension.class)
 class GraphControllerTest {
