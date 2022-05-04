@@ -23,31 +23,35 @@ Após o fim do desenvolvimento, foi incluido nos containers a fim de executar at
 ### Utilização
 Primeiramente para utilização se deve fazer o clone do repositório
 
+```javascript
 cd "diretorio de sua preferencia"
 
 git clone https://gitlab.com/netocampana/desafiomileniocapital
-
+```
 ### Construção
 
 Para construir o projeto com o Maven, executar os comando abaixo no seu terminal, primeiramente iremos criar o container com o MongoDB:
 
+```javascript
 docker pull mongo:latest  
 
 docker run -d --name mongo-on-docker -p 27017:27017 mongo
 
 mvn clean install
-
+```
 O comando irá baixar todas as dependências do projeto e criar um diretório target com os artefatos construídos, que incluem o arquivo jar do projeto. Além disso, serão executados os testes unitários, e se algum falhar, o Maven exibirá essa informação no console.
 Após executar o código do maven, criar o container da aplicação API com o seguinte código:
 
+```javascript
 docker build -t springapplication-on-docker .
-
+```
 ### Execução
 
 Para executar utilizaremos o comando:
 
+```javascript
 docker run -d --name springapplication-on-docker -p 8080:8080 mileniocapitaldesafiomongodb
-
+```
 
 Após isso, teremos a inicialização dos containers do Banco de Dados e da aplicação, sendo possível acessar os endpoints pelo link da documentação Swagger.
 
