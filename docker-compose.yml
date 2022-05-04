@@ -1,14 +1,16 @@
-#version: '3.1'
-#services:
-#  db:
-#    image: mongodb
-#    container_name: capitalmilenio_mongodb_container
-#    environment:
-#      mongodb_root_password: root
-#
-#    ports:
-#      - "3306:3306"
-#    volumes:
-#      - capitalmilenio_data:/var/lib/mongodb
-#volumes:
-#  capitalmilenio_data:
+  version: "3.7"
+  services:
+    mileniocapitaldesafiomongodb:
+      build: .
+      restart: always
+      ports:
+        - 8080:8080
+      links:
+        - mongo-on-docker
+      depends_on:
+        - mongo-on-docker
+    mongo-on-docker:
+      image: "mongo:latest"
+      restart: always
+      ports:
+        - 27017:27017
