@@ -17,27 +17,38 @@ Foi criado a database mileniocapitalmongodb , onde temos a colleection graph e d
 
 A API foi criada utilizando as layers Controllers, Service e Repository. Os testes foram feitos utilizando JUnit5 e Mockito.
 
+Após o fim do desenvolvimento, foi incluido nos containers a fim de executar através do docker.
+
 
 ### Utilização
 Primeiramente para utilização se deve fazer o clone do repositório
 
 cd "diretorio de sua preferencia"
+
 git clone https://gitlab.com/netocampana/desafiomileniocapital
 
 ### Construção
 
-Para construir o projeto com o Maven, executar os comando abaixo:
+Para construir o projeto com o Maven, executar os comando abaixo no seu terminal, primeiramente iremos criar o container com o MongoDB:
+
+docker pull mongo:latest  
+
+docker run -d --name mongo-on-docker -p 27017:27017 mongo
 
 mvn clean install
 
 O comando irá baixar todas as dependências do projeto e criar um diretório target com os artefatos construídos, que incluem o arquivo jar do projeto. Além disso, serão executados os testes unitários, e se algum falhar, o Maven exibirá essa informação no console.
+Após executar o código do maven, criar o container da aplicação API com o seguinte código:
+
+docker build -t springapplication-on-docker .
 
 ### Execução
 
-Antes da conteinerização, para rodar utilizar sua IDE de preferência, após o clone e mvn install, usar a opção "Run" na classe MileniocapitaldesafioApplication.java . 
+Para executar utilizaremos o comando:
+
+docker run -d --name springapplication-on-docker -p 8080:8080 mileniocapitaldesafiomongodb
 
 
-### Testes
-Para rodar os testes, utilize o comando abaixo:
+Após isso, teremos a inicialização dos containers do Banco de Dados e da aplicação, sendo possível acessar os endpoints pelo link da documentação Swagger.
 
-mvn test
+http://localhost:8080/swagger-ui/index.html
