@@ -1,4 +1,4 @@
-package com.netocampana.mileniocapitaldesafio.exceptions;
+package com.netocampana.desafiorotasspringbootwithmongodb.exceptions;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -1,9 +1,9 @@
-package com.netocampana.mileniocapitaldesafio.controllers;
+package com.netocampana.desafiorotasspringbootwithmongodb.controllers;
 
-import com.netocampana.mileniocapitaldesafio.entities.Graph;
-import com.netocampana.mileniocapitaldesafio.util.LowerDistanceDAO;
-import com.netocampana.mileniocapitaldesafio.util.RoutesDAO;
-import com.netocampana.mileniocapitaldesafio.services.GraphService;
+import com.netocampana.desafiorotasspringbootwithmongodb.entities.Graph;
+import com.netocampana.desafiorotasspringbootwithmongodb.util.LowerDistanceDAO;
+import com.netocampana.desafiorotasspringbootwithmongodb.util.RoutesDAO;
+import com.netocampana.desafiorotasspringbootwithmongodb.services.GraphService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;

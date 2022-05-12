@@ -1,7 +1,7 @@
-package com.netocampana.mileniocapitaldesafio.repositories;
+package com.netocampana.desafiorotasspringbootwithmongodb.repositories;
 
-import com.netocampana.mileniocapitaldesafio.entities.Data;
-import com.netocampana.mileniocapitaldesafio.entities.Graph;
+import com.netocampana.desafiorotasspringbootwithmongodb.entities.Data;
+import com.netocampana.desafiorotasspringbootwithmongodb.entities.Graph;
 
 import java.util.ArrayList;
 import java.util.Arrays;

@@ -1,4 +1,4 @@
-package com.netocampana.mileniocapitaldesafio;
+package com.netocampana.desafiorotasspringbootwithmongodb;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

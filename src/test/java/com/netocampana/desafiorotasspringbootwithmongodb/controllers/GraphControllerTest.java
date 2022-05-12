@@ -1,11 +1,11 @@
-package com.netocampana.mileniocapitaldesafio.controllers;
+package com.netocampana.desafiorotasspringbootwithmongodb.controllers;
 
-import com.netocampana.mileniocapitaldesafio.entities.Graph;
-import com.netocampana.mileniocapitaldesafio.repositories.GraphCreator;
-import com.netocampana.mileniocapitaldesafio.repositories.GraphRepository;
-import com.netocampana.mileniocapitaldesafio.services.GraphService;
-import com.netocampana.mileniocapitaldesafio.util.LowerDistanceDAO;
-import com.netocampana.mileniocapitaldesafio.util.RoutesDAO;
+import com.netocampana.desafiorotasspringbootwithmongodb.entities.Graph;
+import com.netocampana.desafiorotasspringbootwithmongodb.repositories.GraphCreator;
+import com.netocampana.desafiorotasspringbootwithmongodb.repositories.GraphRepository;
+import com.netocampana.desafiorotasspringbootwithmongodb.services.GraphService;
+import com.netocampana.desafiorotasspringbootwithmongodb.util.LowerDistanceDAO;
+import com.netocampana.desafiorotasspringbootwithmongodb.util.RoutesDAO;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;

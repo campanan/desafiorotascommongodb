@@ -1,8 +1,7 @@
-package com.netocampana.mileniocapitaldesafio.entities;
+package com.netocampana.desafiorotasspringbootwithmongodb.entities;
 
 
 import lombok.*;
-import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @lombok.Data

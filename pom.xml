@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.netocampana</groupId>
-	<artifactId>mileniocapitaldesafio</artifactId>
+	<artifactId>desafiorotasspringbootwithmongodb</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>mileniocapitaldesafio</name>
-	<description>Desafio Milenio Capital - Dev Jr Pl</description>
+	<name>desafiorotasspringbootwithmongodb</name>
+	<description>Desafio Rotas - Spring Boot com MongoDB</description>
 	<properties>
 		<java.version>11</java.version>
 

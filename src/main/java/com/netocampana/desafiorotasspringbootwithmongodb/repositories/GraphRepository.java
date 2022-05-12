@@ -1,6 +1,6 @@
-package com.netocampana.mileniocapitaldesafio.repositories;
+package com.netocampana.desafiorotasspringbootwithmongodb.repositories;
 
-import com.netocampana.mileniocapitaldesafio.entities.Graph;
+import com.netocampana.desafiorotasspringbootwithmongodb.entities.Graph;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 

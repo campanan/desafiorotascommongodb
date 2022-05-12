@@ -1,4 +1,4 @@
-package com.netocampana.mileniocapitaldesafio.entities;
+package com.netocampana.desafiorotasspringbootwithmongodb.entities;
 
 
 import lombok.*;

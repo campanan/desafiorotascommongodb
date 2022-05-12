@@ -1,12 +1,12 @@
-package com.netocampana.mileniocapitaldesafio.services;
+package com.netocampana.desafiorotasspringbootwithmongodb.services;
 
-import com.netocampana.mileniocapitaldesafio.entities.Data;
-import com.netocampana.mileniocapitaldesafio.entities.Graph;
-import com.netocampana.mileniocapitaldesafio.exceptions.ObjectNotFoundException;
-import com.netocampana.mileniocapitaldesafio.repositories.GraphRepository;
-import com.netocampana.mileniocapitaldesafio.util.LowerDistanceDAO;
-import com.netocampana.mileniocapitaldesafio.util.RoutesDAO;
-import com.netocampana.mileniocapitaldesafio.util.Utils;
+import com.netocampana.desafiorotasspringbootwithmongodb.entities.Data;
+import com.netocampana.desafiorotasspringbootwithmongodb.entities.Graph;
+import com.netocampana.desafiorotasspringbootwithmongodb.exceptions.ObjectNotFoundException;
+import com.netocampana.desafiorotasspringbootwithmongodb.repositories.GraphRepository;
+import com.netocampana.desafiorotasspringbootwithmongodb.util.LowerDistanceDAO;
+import com.netocampana.desafiorotasspringbootwithmongodb.util.RoutesDAO;
+import com.netocampana.desafiorotasspringbootwithmongodb.util.Utils;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

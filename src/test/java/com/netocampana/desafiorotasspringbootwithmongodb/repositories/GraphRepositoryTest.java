@@ -1,7 +1,6 @@
-package com.netocampana.mileniocapitaldesafio.repositories;
+package com.netocampana.desafiorotasspringbootwithmongodb.repositories;
 
-import com.netocampana.mileniocapitaldesafio.entities.Graph;
-import com.netocampana.mileniocapitaldesafio.exceptions.ObjectNotFoundException;
+import com.netocampana.desafiorotasspringbootwithmongodb.entities.Graph;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

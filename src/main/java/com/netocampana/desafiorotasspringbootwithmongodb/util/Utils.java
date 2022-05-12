@@ -1,7 +1,5 @@
-package com.netocampana.mileniocapitaldesafio.util;
+package com.netocampana.desafiorotasspringbootwithmongodb.util;
 
-import com.netocampana.mileniocapitaldesafio.entities.Graph;
-import com.netocampana.mileniocapitaldesafio.repositories.GraphRepository;
 import org.springframework.stereotype.Component;
 
 @Component

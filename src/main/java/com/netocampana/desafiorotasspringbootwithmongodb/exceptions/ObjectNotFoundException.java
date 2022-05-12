@@ -1,4 +1,4 @@
-package com.netocampana.mileniocapitaldesafio.exceptions;
+package com.netocampana.desafiorotasspringbootwithmongodb.exceptions;
 
 public class ObjectNotFoundException extends RuntimeException{
 

@@ -1,4 +1,4 @@
-package com.netocampana.mileniocapitaldesafio.util;
+package com.netocampana.desafiorotasspringbootwithmongodb.util;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
