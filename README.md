@@ -53,19 +53,21 @@ Para exemplificar, esse seria um grafo salvo no CRUD:
 • Encontrar todas rotas disponíveis dada uma cidade de origem e outra de destino em um grafo salvo anteriormente
   um grafo salvo anteriormente, esse endpoint deverá calcular todas as rotas disponíveis de uma cidade origem para outra de destino, dado um número máximo de paradas. Se não existirem rotas possíveis, o resultado deverá ser uma lista vazia. Se o parâmetro "maxStops" não for definido, você deverá listar todas as rotas possíveis. Se o grafo não existir, deverá retornar HTTP NOT FOUND.
   Exemplo: No grafo (AB5, BC4, CD8, DC8, DE6, AD5, CE2, EB3, AE7), as possíveis rotas de A para C com máximo de 3 paradas seriam: ["ABC", "ADC", "AEBC"]
+```javascript  
   Endpoint: http://localhost:8080/routes/<graphId>/from/<town1>/to/<town2>?maxStops=<maxStops>
-
   HTTP Method: POST
   HTTP Success Response Code: OK (200)
   HTTP Error Response Code: NOT FOUND (404)
-
+```
 • Utilizando um grafo salvo anteriormente, esse endpoint deverá determinar a rota cuja distância seja a mínima possível entre duas cidades. Se as cidades de origem e destino forem iguais, o resultado deverá ser zero. Se não exitir rota possível entre as duas cidades, então o resultado deverá ser -1. Se o grafo não existir, deverá retornar HTTP NOT FOUND.
 
+```javascript
   Endpoint: http://localhost:8080/distance/<graphId>/from/<town1>/to/<town2>
-
   HTTP Method: POST
   HTTP Success Response Code: OK (200)
   HTTP Error Response Code: NOT FOUND (404)
+```
+
 
 ## Notas sobre o desenvolvimento:
 
